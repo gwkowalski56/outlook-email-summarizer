@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://appsforoffice.microsoft.com/js/1.1/office.js"></script>
+</head>
+<body>
+    <script>
+        Office.onReady(() => {
+            // This file handles button commands for the add-in
+            console.log('Commands loaded');
+        });
+
+        function openTaskPane() {
+            Office.ribbon.requestUpdate({
+                tabs: [{
+                    id: "TabDefault",
+                    groups: [{
+                        id: "msgReadGroup",
+                        controls: [{
+                            id: "msgReadOpenPaneButton",
+                            enabled: true
+                        }]
+                    }]
+                }]
+            });
+        }
+    </script>
+</body>
+</html>
